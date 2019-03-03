@@ -49,11 +49,19 @@ footer {
 input{
     border: 1px solid #cccccc;
     padding: 8px;
+    height: 46px;
 }
+
+input:focus{
+    outline:none;
+    border: 1px solid #acacac;
+}
+
 button{
     border: 1px solid #888888;
     background: #888888;
     color: white;
     cursor: pointer;
     padding: 8px;
+    height: 46px;
 }

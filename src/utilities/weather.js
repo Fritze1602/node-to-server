@@ -13,19 +13,19 @@ const getWeatherData = (address) => {
     return new Promise((resolve, reject) => {
 
         axios.get(url).then(( {data} ) => {
-            console.log(data.features.length === 0 );
+           
              if(data.features.length === 0 ){
-              reject('Cannot find this location');
+              reject('Kein solcher Ort.');
              }
             if (data.features[0].relevance < 1 || data.features.length === 0) {
-               reject('Cannot find this location');
+               reject('Kein solcher Ort.');
             }
              weatherData.locationConfidence = data.features[0].relevance;  
             const lat =  data.features[0].center[1];
             const long = data.features[0].center[0];
             
-            const weatherUrl = `https://api.darksky.net/forecast/${weatherApiKey}/${lat},${long}`;
-            console.log(weatherUrl)
+            const weatherUrl = `https://api.darksky.net/forecast/${weatherApiKey}/${lat},${long}?lang=de&units=si`;
+       
             weatherData.location = data.features[0].place_name;
           
             return axios.get(weatherUrl);
@@ -37,8 +37,8 @@ const getWeatherData = (address) => {
         })
             .catch((e) => {
                 if (e.code === 'ENOTFOUND') {
-                    reject({ error: 'Unable to connect to api servers' });
-                }
+                    reject('Unable to connect to api servers');
+                } 
             });
     });
 };

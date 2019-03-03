@@ -35,7 +35,7 @@ app.use(express.static(publicDirectoryPath));
 app.get('/',  (req, res) => {
         res.render('index.hbs',{
             title: 'Weather',
-            welcomeMsg: 'Und nun das Wetter ...',
+            welcomeMsg: 'Das Wetter in ...',
         });
     }
 );
@@ -50,7 +50,7 @@ app.get('/help', (req,res) => {
 app.get('/about', (req, res)=>{
     res.render('about.hbs', {
         title: 'About Page',
-        aboutText: 'created by Fritz'
+        aboutText: 'created exactly-webdesign.com'
     });
 });
 
@@ -65,6 +65,7 @@ app.get('/weather', (req, res)=> {
     weather.getWeatherData(req.query.address).then((result)=>{
        res.send(result)
     }).catch((e) => {
+       console.log(e)
         res.send({
             error: e
         });
