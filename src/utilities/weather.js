@@ -30,8 +30,8 @@ const getWeatherData = (address) => {
           
             return axios.get(weatherUrl);
         }).then(({ data }) => {
-            weatherData.temperatur = Math.round(fahrenheitToCelsius(data.currently.temperature));
-            weatherData.apperentTemp = Math.round(fahrenheitToCelsius(data.currently.apparentTemperature));
+            weatherData.temperatur = Math.round(data.currently.temperature);
+            weatherData.apperentTemp = Math.round(data.currently.apparentTemperature);
             weatherData.forecast = data.daily.summary;
             resolve(weatherData);
         })
