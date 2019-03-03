@@ -1,0 +1,19 @@
+{{> header}}
+<main>
+    <p>{{welcomeMsg}}</p>
+
+<form id="search-form">
+    <input id="search-input" name="searchInput" type="search" placeholder="Your location">
+    <button>Submit</button>
+</form>
+<div id="output">
+    <p id="location"></p>
+    <p id="forecast"></p>
+    <p id="temperature"></p>
+</div>
+
+</main>
+{{> footer}}
+<script src="/js/fetchWeather.js"></script>
+</body>
+</html>

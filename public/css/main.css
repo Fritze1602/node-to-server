@@ -1,0 +1,59 @@
+body {
+    font-family: ProximaNova,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgb(90, 90, 90)
+}
+
+h1 {
+    font-size: 64px;
+    color: black;
+    margin-bottom: 16px;
+}
+
+header {
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding-bottom: 45px;
+}
+
+nav a {
+    padding: 0 10px 0 0 ;
+    display: inline-block;
+}
+
+a, a:visited, a:focus{
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+}
+a:hover {
+    color: blueviolet;
+}
+
+main {
+    padding-top: 16px;
+    flex: 1;
+}
+
+img.portrait {
+    width: 200px;
+    height: auto;
+}
+
+footer {
+    border-top: 1px solid rgb(235, 234, 234);
+}
+
+input{
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+button{
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
